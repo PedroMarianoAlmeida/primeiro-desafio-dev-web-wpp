@@ -1,16 +1,13 @@
-//https://pt-br.reactjs.org/docs/forms.html
-
-const SeletorDeNomes = () => {
+const SeletorDeNomes = ({ opções }) => {
   return (
     <select>
-      <option value="laranja">Laranja</option>
-      <option value="limao">Limão</option>
-      <option selected value="coco">
-        Coco
-      </option>
-      <option value="manga">Manga</option>
+      {opções.map((nome) => (
+        <option key={nome} value={nome}>
+          {nome}
+        </option>
+      ))}
     </select>
   );
 };
 
-export default SeletorDeNomes
+export default SeletorDeNomes;
