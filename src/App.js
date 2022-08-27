@@ -2,7 +2,10 @@ import "./App.css";
 import data from "./data";
 
 function App() {
-  console.log(data);
+  //console.log(data);
+
+  const nomes = data.map((dado) => dado.dados.nome);
+  console.log(nomes);
 
   return (
     <div>
