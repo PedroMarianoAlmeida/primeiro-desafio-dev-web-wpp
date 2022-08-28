@@ -1,6 +1,4 @@
 const CardDeServiços = ({ data, nomeSelecionado }) => {
-  //console.log(data, nomeSelecionado);
-
   const dadosDoSelecionado = data.find(
     (dado) => dado.dados.nome === nomeSelecionado
   );
@@ -9,11 +7,14 @@ const CardDeServiços = ({ data, nomeSelecionado }) => {
   const informaçõesRelevantesDosServiço = todosOsServiçosDoSelecionado?.map(
     (serviço) => {
       const preçoObjeto = serviço.texts.find((texto) => texto.key === "Preço");
+      const éEspecialObjeto = serviço.texts.find(
+        (texto) => texto.key === "Serviço Especial"
+      );
 
       return {
         nome: serviço.nome,
         valor: preçoObjeto.value,
-        éEspecial: "",
+        éEspecial: !!éEspecialObjeto,
       };
     }
   );
