@@ -18,7 +18,11 @@ const CardDeServiços = ({ data, nomeSelecionado }) => {
       };
     }
   );
-  console.log(informaçõesRelevantesDosServiço);
+
+  const serviçosEspeciais = informaçõesRelevantesDosServiço?.filter(
+    (serviço) => serviço.éEspecial
+  );
+  console.log(serviçosEspeciais);
   return (
     <>
       {nomeSelecionado ? (
