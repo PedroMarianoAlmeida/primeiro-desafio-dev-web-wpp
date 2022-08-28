@@ -1,6 +1,7 @@
-const SeletorDeNomes = ({ opções }) => {
+const SeletorDeNomes = ({ opções, setNomeSelecionado }) => {
   return (
-    <select>
+    <select onChange={(e) => setNomeSelecionado(e.target.value)}>
+      <option value="">Selecionar</option>
       {opções.map((nome) => (
         <option key={nome} value={nome}>
           {nome}
