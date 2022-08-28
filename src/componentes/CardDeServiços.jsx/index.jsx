@@ -1,3 +1,5 @@
+import Card from "./Card";
+
 const CardDeServiços = ({ data, nomeSelecionado }) => {
   const dadosDoSelecionado = data.find(
     (dado) => dado.dados.nome === nomeSelecionado
@@ -22,11 +24,11 @@ const CardDeServiços = ({ data, nomeSelecionado }) => {
   const serviçosEspeciais = informaçõesRelevantesDosServiço?.filter(
     (serviço) => serviço.éEspecial
   );
-  console.log(serviçosEspeciais);
+
   return (
     <>
       {nomeSelecionado ? (
-        <p>Card de Serviços</p>
+        <Card />
       ) : (
         <p>↑ Escolher profissional na caixa acima ↑</p>
       )}
