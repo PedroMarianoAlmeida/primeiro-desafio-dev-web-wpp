@@ -4,7 +4,18 @@ const CardDeServiços = ({ data, nomeSelecionado }) => {
   const dadosDoSelecionado = data.find(
     (dado) => dado.dados.nome === nomeSelecionado
   );
-  console.log(dadosDoSelecionado);
+
+  const todosOsServiçosDoSelecionado = dadosDoSelecionado?.servicos;
+  const informaçõesRelevantesDosServiço = todosOsServiçosDoSelecionado?.map(
+    (serviço) => {
+      return {
+        nome: serviço.nome,
+        valor: "",
+        éEspecial: "",
+      };
+    }
+  );
+  console.log(todosOsServiçosDoSelecionado);
   return (
     <>
       {nomeSelecionado ? (
