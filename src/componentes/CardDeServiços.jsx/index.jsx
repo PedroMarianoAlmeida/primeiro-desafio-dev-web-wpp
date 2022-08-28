@@ -28,7 +28,25 @@ const CardDeServiços = ({ data, nomeSelecionado }) => {
   return (
     <>
       {nomeSelecionado ? (
-        <Card />
+        <>
+          <h2>Serviços Especiais</h2>
+          {serviçosEspeciais.map((serviço) => (
+            <Card
+              key={serviço.nome}
+              nome={serviço.nome}
+              valor={serviço.valor}
+            />
+          ))}
+
+          <h2>Todos os Serviços</h2>
+          {informaçõesRelevantesDosServiço.map((serviço) => (
+            <Card
+              key={serviço.nome}
+              nome={serviço.nome}
+              valor={serviço.valor}
+            />
+          ))}
+        </>
       ) : (
         <p>↑ Escolher profissional na caixa acima ↑</p>
       )}
