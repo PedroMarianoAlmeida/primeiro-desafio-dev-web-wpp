@@ -5,7 +5,15 @@ const CardDeServiços = ({ data, nomeSelecionado }) => {
     (dado) => dado.dados.nome === nomeSelecionado
   );
   console.log(dadosDoSelecionado);
-  return <p>Card de Serviços</p>;
+  return (
+    <>
+      {nomeSelecionado ? (
+        <p>Card de Serviços</p>
+      ) : (
+        <p>↑ Escolher profissional na caixa acima ↑</p>
+      )}
+    </>
+  );
 };
 
 export default CardDeServiços;
