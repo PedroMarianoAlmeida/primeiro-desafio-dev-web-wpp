@@ -1,5 +1,5 @@
 const CardDeServiços = ({ data, nomeSelecionado }) => {
-  console.log(data, nomeSelecionado);
+  //console.log(data, nomeSelecionado);
 
   const dadosDoSelecionado = data.find(
     (dado) => dado.dados.nome === nomeSelecionado
@@ -8,14 +8,16 @@ const CardDeServiços = ({ data, nomeSelecionado }) => {
   const todosOsServiçosDoSelecionado = dadosDoSelecionado?.servicos;
   const informaçõesRelevantesDosServiço = todosOsServiçosDoSelecionado?.map(
     (serviço) => {
+      const preçoObjeto = serviço.texts.find((texto) => texto.key === "Preço");
+
       return {
         nome: serviço.nome,
-        valor: "",
+        valor: preçoObjeto.value,
         éEspecial: "",
       };
     }
   );
-  console.log(todosOsServiçosDoSelecionado);
+  console.log(informaçõesRelevantesDosServiço);
   return (
     <>
       {nomeSelecionado ? (
